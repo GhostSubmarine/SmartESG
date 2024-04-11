@@ -36,7 +36,6 @@ body {
 
 html {
 	scroll-behavior: smooth;
-	background-color: #121110;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -53,8 +52,9 @@ body {
 }
 
 body {
-	background-image: radial-gradient(rgba(52, 58, 64, 0.5) 1px, transparent 1px);
-	background-size: 2rem 2rem;
+	/* background-image: radial-gradient(rgba(52, 58, 64, 0.5) 1px, transparent 1px); */
+	background-image: linear-gradient(to bottom, #496D70 0%, #495970 100%);
+	background-size: cover;
 	background-attachment: fixed;
 	min-width: 280px;
 	margin-bottom: 0 !important;
