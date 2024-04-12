@@ -76,6 +76,26 @@ import { ElDropdownMenu, ElDropdown, ElDropdownItem } from 'element-plus';
       width: 100%;
       .menu-toggle {
         display: none;
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        font-family: "Anicons Regular", sans-serif;
+        font-variation-settings: "TIME" 1;
+        transition: font-variation-settings 0.4s ease;
+        cursor: pointer;
+        border: none;
+        border-radius: 0;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgNDYgNTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwYXRoIGQ9Ik00Mi4yODQ1IDExLjk3OTNMMjUuNDk5OSAyLjI4ODY4QzIzLjk1MjkgMS4zOTU1MSAyMi4wNDY5IDEuMzk1NTEgMjAuNDk5OSAyLjI4ODY3TDMuNzE1MzMgMTEuOTc5M0MyLjE2ODMzIDEyLjg3MjQgMS4yMTUzMyAxNC41MjMxIDEuMjE1MzMgMTYuMzA5NFYzNS42OTA2QzEuMjE1MzMgMzcuNDc2OSAyLjE2ODMzIDM5LjEyNzYgMy43MTUzMyA0MC4wMjA3TDIwLjQ5OTkgNDkuNzExM0MyMi4wNDY5IDUwLjYwNDUgMjMuOTUyOSA1MC42MDQ1IDI1LjQ5OTkgNDkuNzExM0w0Mi4yODQ1IDQwLjAyMDdDNDMuODMxNiAzOS4xMjc2IDQ0Ljc4NDUgMzcuNDc2OSA0NC43ODQ1IDM1LjY5MDZWMTYuMzA5NEM0NC43ODQ1IDE0LjUyMzEgNDMuODMxNiAxMi44NzI0IDQyLjI4NDUgMTEuOTc5M1oiIGZpbGw9IiMxMjExMTAiIHN0cm9rZT0iIzYzNDdGRiIgc3Ryb2tlLXdpZHRoPSIyIi8+DQo8L3N2Zz4=);
+        background-position: center;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        color: #f2f4f3;
+        line-height: unset;
+        padding: 0;
+        height: 4rem;
+        width: 4rem;
       }
       @media screen and (max-width: 960px) {
         .menu-toggle{
@@ -84,6 +104,7 @@ import { ElDropdownMenu, ElDropdown, ElDropdownItem } from 'element-plus';
       }
       .menu-wrapper {
         transition: all 500ms;
+        opacity: 0;
         .menu {
           text-align: center;
           // background: #121110;
@@ -140,6 +161,11 @@ import { ElDropdownMenu, ElDropdown, ElDropdownItem } from 'element-plus';
               }
             }
           }
+        }
+      }
+      @media screen and (min-width: 960px) {
+        .menu-wrapper {
+          opacity: 1;
         }
       }
     }

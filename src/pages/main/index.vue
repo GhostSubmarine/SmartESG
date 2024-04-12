@@ -386,6 +386,7 @@
         .content {
           padding-top: 5rem;
           padding-bottom: 3rem;
+          margin: 0 auto;
         }
       }
       @media screen and (min-width: 800px) {
@@ -420,6 +421,7 @@
       @media screen and (min-width: 600px) {
         .media {
           height: 35rem;
+          margin: 0 auto;
         }
       }
       @media screen and (min-width: 480px) {
