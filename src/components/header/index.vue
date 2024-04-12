@@ -2,52 +2,195 @@
 import 'element-plus/es/components/dropdown/style/css'
 import 'element-plus/es/components/dropdown-item/style/css'
 import 'element-plus/es/components/dropdown-menu/style/css'
-import { ElDropdownMenu, ElDropdown, ElDropdownItem } from 'element-plus';
-
+import 'element-plus/es/components/dialog/style/css'
+import 'element-plus/es/components/form/style/css'
+import 'element-plus/es/components/form-item/style/css'
+import 'element-plus/es/components/input/style/css'
+import 'element-plus/es/components/button/style/css'
+import 'element-plus/es/components/space/style/css'
+import { ElDropdownMenu, ElDropdown, ElDropdownItem, ElDialog, ElForm, ElFormItem, ElInput, ElButton, ElSpace } from 'element-plus';
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const dialogVisible = ref(false)
+const active = ref(0)
+const menuClass = ref('')
+const toggle = ref(false)
+const clickToggle = () => {
+  toggle.value = !toggle.value
+}
+watch(
+  () => router.currentRoute.value,
+  (newValue: any) => {
+    window.scrollTo(0, 0)
+    active.value = +newValue.query.active
+  },
+  { immediate: true }
+)
+const changeHeader = () => {
+  const element = document.getElementById('menu')
+}
+onMounted(() => {
+  document.body.addEventListener('wheel', changeHeader)
+})
+onBeforeUnmount(() => {
+  document.body.removeEventListener('wheel', changeHeader)
+})
 </script>
 <template>
   <header class="header">
     <article class="container">
       <!-- <div>SmartESG | 司⻢致信息科技</div> -->
-      <img style="height: 5rem;" src="@/assets/images/green-removebg-preview.png" />
+      <RouterLink to="/" style="height: 3rem; position: relative;">
+        <img style="height: 5rem; position: absolute; top: -1rem;" src="@/assets/images/green-removebg-preview.png" />
+      </RouterLink>
       <nav class="main-navigation">
-        <button class="menu-toggle">A</button>
-        <div class="menu-wrapper">
-          <ul class="menu">
+        <button class="menu-toggle" >A</button>
+        <div class="menu-wrapper" id="menu">
+          <ul class="menu" :class="menuClass">
             <li class="menu-item">
-              <el-dropdown>
-                <a href="#">解决⽅案中⼼</a>
+              <el-dropdown class="cus-dropdown">
+                <a :class="{
+                  active: active === 1
+                }" href="#">解决⽅案中⼼</a>
                 <template #dropdown>
-                  <el-dropdown-menu>
-                    <el-dropdown-item>ESG企业端解决⽅案</el-dropdown-item>
-                    <el-dropdown-item>ESG投资⼈解决⽅案</el-dropdown-item>
-                    <el-dropdown-item>评级综合解决⽅案</el-dropdown-item>
-                    <el-dropdown-item>碳与⽓候解决⽅案</el-dropdown-item>
+                  <el-dropdown-menu class="cus-dropdown-menu">
+                    <el-dropdown-item>
+                      <RouterLink to="/enterpriseEnd">
+                        ESG企业端解决⽅案
+                      </RouterLink>
+                    </el-dropdown-item>
+                    <el-dropdown-item>
+                      <RouterLink to="/investor">
+                        ESG投资⼈解决⽅案
+                      </RouterLink>
+                    </el-dropdown-item>
+                    <el-dropdown-item>
+                      <RouterLink to="/comprehensiveRating">
+                        评级综合解决⽅案
+                      </RouterLink>
+                    </el-dropdown-item>
+                    <el-dropdown-item>
+                      <RouterLink to="/carbonAndClimate">
+                        碳与⽓候解决⽅案
+                      </RouterLink>
+                    </el-dropdown-item>
                   </el-dropdown-menu>
                 </template>
               </el-dropdown>
             </li>
             <li class="menu-item">
-              <a href="#">ESG数智化平台</a>
+              <RouterLink to="/stage" :class="{
+                  active: active === 2
+                }">
+                ESG数智化平台
+              </RouterLink>
             </li>
             <li class="menu-item">
-              <a href="#">关于我们</a>
+              <RouterLink to="/aboutUs?" :class="{
+                  active: active === 3
+                }">
+                关于我们
+              </RouterLink>
             </li>
             <li class="menu-item">
               <a href="#">中⽂/英⽂转换</a>
             </li>
             <li class="menu-item">
-              <a href="#">⽤⼾登录</a>
+              <a href="#" @click="dialogVisible = true">⽤⼾登录</a>
             </li>
           </ul>
         </div>
       </nav>
     </article>
   </header>
-  
+  <el-dialog
+    v-model="dialogVisible"
+    title="Tips"
+    width="500"
+  >
+    <el-form>
+
+    </el-form>
+    <template #footer>
+      <div class="dialog-footer">
+        <el-button @click="dialogVisible = false">Cancel</el-button>
+        <el-button type="primary" @click="dialogVisible = false">
+          Confirm
+        </el-button>
+      </div>
+    </template>
+  </el-dialog>
+  <el-dialog></el-dialog>
 </template>
 
 <style lang="scss" scoped>
+
+.cus-dropdown-menu {
+  // background-color: rgba(0, 0, 0, 0.6);
+  // border: 1px solid rgba(0, 0, 0, 0.6);
+  a {
+    // padding: 2rem 0.75rem;
+    width: 100%;
+    // height: 100%;
+    outline: none !important;
+    color: #f2f4f3;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: 500ms padding cubic-bezier(0.075, 0.82, 0.165, 1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    // &:focus::after {
+    //   width: 100%;
+    //   opacity: .5;
+    // }
+    &:hover::after {
+      width: 100%;
+      opacity: .5;
+    }
+    // &.active::after {
+    //   width: 100%;
+    //   opacity: 1;
+    // }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, rgba(99, 71, 255, 0) 0%, #6347ff 52.99%, rgba(99, 71, 255, 0) 100%);
+      height: 4px;
+      width: 0;
+      opacity: 0;
+      transition: 250ms all ease-out;
+    }
+  }
+}
+// .cus-dropdown {
+
+// }
+// .cus-dropdown-menu {
+  
+// }
+.cus-dialog {
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+	.cus-dialog.el-dialog {
+		width: 300px !important;
+		padding: 10px 20px!important;
+		.el-form-item__label{
+			width: 68px!important;
+		}
+		.el-select,.el-input{
+			width: 180px!important;
+		}
+	}
+}
 .header {
   z-index: 100;
   position: sticky;
@@ -57,7 +200,7 @@ import { ElDropdownMenu, ElDropdown, ElDropdownItem } from 'element-plus';
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
-    max-width: calc(1280px - 12rem);
+    max-width: calc(880px - 12rem);
     display: flex;
     align-items: center;
     padding-left: 1.5rem;
@@ -112,6 +255,11 @@ import { ElDropdownMenu, ElDropdown, ElDropdownItem } from 'element-plus';
           display: flex;
           justify-content: space-evenly;
           margin-block: 0;
+          &.sticky .menu-item {
+            a {
+              padding: 1rem 0.75rem;
+            }
+          }
           .menu-item {
             display: flex;
             align-items: center;
@@ -135,13 +283,13 @@ import { ElDropdownMenu, ElDropdown, ElDropdownItem } from 'element-plus';
               justify-content: center;
               flex-direction: column;
               text-decoration: none;
-              &:focus::after {
-                width: 100%;
-                opacity: .5;
-              }
+              // &:focus::after {
+              //   width: 100%;
+              //   opacity: .5;
+              // }
               &:hover::after {
                 width: 100%;
-                opacity: 1;
+                opacity: .5;
               }
               &.active::after {
                 width: 100%;
