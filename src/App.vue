@@ -26,6 +26,12 @@ import Header from '@/components/header/index.vue'
 <style lang="scss" scoped>
 .footer {
 	padding-top: 4rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #706b49;
+  border-radius: 8px;
+  margin-bottom: 2rem;
   .continer {
     max-width: calc(1280px - 12rem);
     width: calc(100% - 3rem);
@@ -83,24 +89,24 @@ import Header from '@/components/header/index.vue'
 @media screen and (min-width: 640px) {
 
 	.footer {
-		padding-top: 6rem;
-		padding-bottom: 6rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 	}
 }
 
 @media screen and (min-width: 960px) {
 
 	.footer {
-		padding-top: 7rem;
-		padding-bottom: 7rem;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 	}
 }
 
 @media screen and (min-width: 1280px) {
 
 	.footer {
-		padding-top: 8rem;
-		padding-bottom: 8rem;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
 	}
 }
 </style>

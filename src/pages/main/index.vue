@@ -4,268 +4,94 @@
 
 <template>
   <main class="main">
-    <section class="headline">
-      <article class="container">
-        <div class="content">
-          <h4>科技融⼊梦想<br />绿⾊赋能发展</h4>
-        </div>
-      </article>
-    </section>
-    <section class="parallax-header">
-      <article class="container">
-        <div class="content fade-top-bottom">
-          <div class="images-content-wrapper parallax-cards header">
-            <div class="image-grid-wrapper" style="grid-template-columns: repeat(7, 1fr)">
-              <div class="card-column start-animation">
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-              </div>
-              <div class="card-column start-animation">
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-              </div>
-              <div class="card-column start-animation">
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-              </div>
-              <div class="card-column start-animation">
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-              </div>
-              <div class="card-column start-animation">
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-              </div>
-              <div class="card-column start-animation">
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-              </div>
-              <div class="card-column start-animation">
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-                <div class="card grow">
-                  <img style="width: 100%;" src="@/assets/images/微信图片_20240411141725.jpg" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
+
     <section class="carousel">
       <article class="container">
         <div class="media">
           <div class="swiper" id="carousel-large-home">
             <div class="swiper-wrapper">
-              <!-- Start Slides -->
+              <div class="swiper-slide">
+                <div class="flex-card large">
+                  <div class="card-content">
+                    <div class="card-media-wrapper">
+                      <div class="card-media media1">
+                        <h4>科技融⼊梦想,绿⾊赋能发展</h4>
+                      </div>
+                    </div>
+                    <div class="text-section">
+                      <h3>SmartESG | 司⻢致享</h3>
+                      <p class="">通过数字化变⾰传统分析，提供有效ESG解决⽅案。赋能绿⾊⾦融，推动可持续发展。<br/>
+⽴⾜中国市场，服务全球低碳转型需求。提供关键数据，助企业与机构做出明智决策。<br/>
+积极应对⽓候变化挑战，促进社会低碳转型。依托国际化专家团队，深度解析⻛险与
+机会。<br/>
+指导客⼾有效⾏动，共同迈向净零⽬标。从ESG披露⾄碳中和管理，累积丰富经验。</p>
+                    </div>
+                  </div>
+                </div>
+                </div>
               <div class="swiper-slide">
 
                 <div class="flex-card large">
                   <div class="card-content">
                     <div class="card-media-wrapper">
-                      <div class="card-media"
-                        style="background-image: url(../../assets/images/微信图片_20240411141725.jpg)">
+                      <div class="card-media media2">
                       </div>
                     </div>
                     <div class="text-section">
-                      <h3>This world is ours for the making.</h3>
-                      <p class="">Roblox builds the tools and platform that empower people to create their own immersive
-                        experiences,
-                        so that any world they can imagine can be brought to life. Our vision is to reimagine the way
-                        people
-                        come together to create, play, explore, learn, and connect with one another.</p>
+                      <h3>领先的ESG综合解决⽅案供应商。</h3>
+                      <p class="">⽴⾜中国市场为全球应对⽓候变化与低碳转型提供重
+要的研究，⼯具与数据以助⼒合作伙伴做出更明智的选择，从⽽积极应对⽓候变化等系
+统性⻛险，共创绿⾊永续未来！</p>
                     </div>
                   </div>
                 </div>
               </div>
-
               <div class="swiper-slide">
 
                 <div class="flex-card large">
                   <div class="card-content">
                     <div class="card-media-wrapper">
-                      <div class="card-media"
-                      style="background-image: url(../../assets/images/微信图片_20240411141725.jpg)">
+                      <div class="card-media media3">
                       </div>
                     </div>
                     <div class="text-section">
-                      <h3>We don't make Roblox. You do.</h3>
-                      <p class="">Roblox is built by a global community of millions of developers and creators who are
-                        always making
-                        new experiences for users to explore. Using Roblox tools and technology, our community is
-                        creating
-                        new ways for people to connect every day.</p>
+                      <h3>Smartesg汇聚全球强⼤的ESG投研量化研究团队，聚焦本⼟研究和客⼾服务，以中国智
+慧服务全球。</h3>
+                      <p class="">六⼤核⼼优势： 全球视野, 专业定制, 产业专家, 以利并举, 多元合作, 数智
+赋能</p>
                     </div>
                   </div>
                 </div>
               </div>
-
               <div class="swiper-slide">
 
                 <div class="flex-card large">
                   <div class="card-content">
                     <div class="card-media-wrapper">
-                      <div class="card-media"
-                      style="background-image: url(../../assets/images/微信图片_20240411141725.jpg)">
-                      </div>
+                      <div class="card-media media4"></div>
                     </div>
                     <div class="text-section">
-                      <h3>Connecting millions of people.</h3>
-                      <p class="">Every day, people come to Roblox to connect, create, and explore with old and new
-                        friends. With
-                        tens of millions of daily active users, we are moving closer toward our mission of connecting a
-                        billion people with optimism and civility.</p>
+                      <h3>主要客⼾群体</h3>
+                      <p class=""></p>
                     </div>
                   </div>
                 </div>
               </div>
-
               <div class="swiper-slide">
 
                 <div class="flex-card large">
                   <div class="card-content">
                     <div class="card-media-wrapper">
-                      <div class="card-media"
-                      style="background-image: url(../../assets/images/微信图片_20240411141725.jpg)">
-                      </div>
+                      <div class="card-media media5"></div>
                     </div>
                     <div class="text-section">
-                      <h3>A vibrant virtual economy.</h3>
-                      <p class="">Roblox is building a virtual economy powered by a community of creators and users.</p>
+                      <h3>可持续⻅解</h3>
+                      <p class=""></p>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div class="swiper-slide">
-
-                <div class="flex-card large">
-                  <div class="card-content">
-                    <div class="card-media-wrapper">
-                      <div class="card-media"
-                      style="background-image: url(../../assets/images/微信图片_20240411141725.jpg)">
-                      </div>
-                    </div>
-                    <div class="text-section">
-                      <h3>Always innovating.</h3>
-                      <p class="">Our engineers are solving complex problems and building powerful, intuitive tools that
-                        allow millions
-                        of people of all skill levels to create and share their own immersive worlds with others.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-
-                <div class="flex-card large">
-                  <div class="card-content">
-                    <div class="card-media-wrapper">
-                      <div class="card-media"
-                      style="background-image: url(../../assets/images/微信图片_20240411141725.jpg)">
-                      </div>
-                    </div>
-                    <div class="text-section">
-                      <h3>Built on a foundation of safety and civility.</h3>
-                      <p class="">We’re committed to providing the tools and resources to ensure our community remains a
-                        safe, civil,
-                        and inclusive place. We believe everyone deserves an environment that supports their ability to
-                        explore
-                        their creativity, express themselves, and share experiences with others.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-
-                <div class="flex-card large">
-                  <div class="card-content">
-                    <div class="card-media-wrapper">
-                      <div class="card-media"
-                      style="background-image: url(../../assets/images/微信图片_20240411141725.jpg)">
-                      </div>
-                    </div>
-                    <div class="text-section">
-                      <h3>Find communities dedicated to your favorite Roblox experiences.</h3>
-                      <p class="">Connect with your community using text, voice, and video chat all on Guilded.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- End Slides -->
             </div>
-
-            <!-- If we need pagination -->
-            <div class="pagination-container">
-              <a class="prev"></a>
-              <div class="swiper-pagination"></div>
-              <a class="next"></a>
-            </div>
-
-
-            <!-- If we need navigation buttons -->
-            <!-- <div class="swiper-button-prev"></div> -->
-            <!-- <div class="swiper-button-next"></div> -->
           </div>
         </div>
       </article>
@@ -274,29 +100,242 @@
 </template>
 
 <style lang="scss" scoped>
-.main section {
-	position: relative;
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+.flex-card.large {
+  padding: 2rem 4rem;
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    .card-media-wrapper {
+      margin-bottom: unset;
+    }
+    .text-section {
+      width: 100%;
+      max-width: unset;
+      margin-top: unset;
+      h3 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+.flex-card {
+  border-radius: 8px 8px 8px 0;
+  padding: 2rem;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  // background-color: #dee2e6;
+  color: #121110;
+  box-sizing: border-box;
+  position: relative;
+  .card-content {
+    .card-media-wrapper {
+      position: relative;
+      width: 100%;
+      margin-bottom: 2rem;
+      .card-media {
+        width: 100%;
+        padding-bottom: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 8px 8px 8px 0;
+        &.media1 {
+          background-image: url('../../assets/images/微信图片_20240411141725.jpg');
+        }
+        &.media2 {
+          background-image: url('../../assets/images/微信图片_20240414101955.png');
+        }
+        &.media3 {
+          background-image: url('../../assets/images/微信图片_20240414105125.png');
+        }
+        &.media4 {
+          background-image: url('../../assets/images/微信图片_20240414105141.png');
+        }
+        &.media5 {
+          background-image: url('../../assets/images/微信图片_20240414105203.png');
+        }
+      }
+    }
+    .text-section {
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .flex-card.large {
+    padding: 2rem 3rem !important;
+    .card-content {
+      flex-direction: row-reverse;
+      column-gap: 2rem;
+      margin-left: unset;
+      margin-right: unset;
+      .card-media-wrapper {
+        flex: 0 1 40%;
+        max-width: 20rem;
+      }
+      .text-section {
+        flex: 1 1 60%;
+        h3 {
+          font-size: 1.75rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .flex-card.large {
+    padding: 3rem !important;
+    .card-content {
+      column-gap: 3rem;
+      .text-section {
+        h3 {
+          font-size: 2.25rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .flex-card.large {
+    padding: 4rem !important;
+    .card-content {
+      .text-section {
+        h3 {
+          font-size: 2.25rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  .flex-card.large {
+    .card-content {
+      .text-section {
+        h3 {
+          font-size: 2.5rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
 
-@media screen and (min-width: 600px) {
-	.main section {
-		padding-top: 4rem;
-		padding-bottom: 4rem;
-	}
+
+
+.container {
+  width: calc(100% - 3rem);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(1280px - 12rem);
+}
+.main {
+  display: flex;
+  flex-direction: columns;
+  section.carousel {
+    position: relative;
+    // padding-top: 3rem;
+    padding-bottom: 3rem;
+    article.container {
+      max-width: 1440px;
+    }
+    article {
+      .media {
+        min-height: 28rem;
+      }
+    }
+    @media screen and (min-width: 360px) {
+      article.container {
+        width: 100%;
+      }
+    }
+  }
+  .carousel {
+    .swiper {
+      // padding-top: 3rem;
+      .swiper-slide {
+        height: unset;
+        &:nth-child(5n+1) {
+          .flex-card {
+            // background-color: #162227;
+            color: #dee2e6;
+            .card-content {
+              .card-media-wrapper {
+                flex: 0 1 60%;
+                max-width: 40rem;
+                .card-media {
+                  position: relative;
+                  h4 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(5n+2) {
+          .flex-card {
+            background-color: #162227;
+            color: #dee2e6;
+          }
+        }
+        &:nth-child(5n+3) {
+          .flex-card {
+            background-color: #343a40;
+            color: #dee2e6;
+          }
+        }
+        &:nth-child(5n+4) {
+          .flex-card {
+            background-color: #4d5257;
+            color: #dee2e6;
+          }
+        }
+        &:nth-child(5n+5) {
+          .flex-card {
+            background-color: #6f7274;
+            color: #dee2e6;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    section.carousel {
+      // padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
 }
 
 @media screen and (min-width: 800px) {
 	section {
-		padding-top: 5rem;
+		// padding-top: 5rem;
 		padding-bottom: 5rem;
 	}
 }
 .main {
   flex-grow: 1;
   overflow: hidden;
-  display: block;
+  // display: block;
+  flex-direction: column;
   scroll-margin-top: calc(80px + 1rem);
 
   .headline {
@@ -316,7 +355,7 @@
 
   @media screen and (min-width: 600px) {
     section {
-      padding-top: 4rem;
+      // padding-top: 4rem;
       padding-bottom: 4rem;
 
       h2 {
@@ -336,14 +375,14 @@
 
   @media screen and (min-width: 800px) {
     section {
-      padding-top: 5rem;
+      // padding-top: 5rem;
       padding-bottom: 5rem;
     }
   }
 
   @media screen and (min-width: 960px) {
     section {
-      padding-top: 5.5rem;
+      // padding-top: 5.5rem;
       padding-bottom: 5.5rem;
 
       h2 {
@@ -526,8 +565,5 @@
   .main {
     scroll-margin-top: calc(15px + 3rem);
   }
-}
-.carousel {
-  background-color: #121110;
 }
 </style>

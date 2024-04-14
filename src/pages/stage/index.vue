@@ -1,32 +1,39 @@
 <script setup>
 import { ref } from 'vue'
+import image1 from '../../assets/images/stage/微信图片_20240414141203.png'
+import image2 from '../../assets/images/stage/微信图片_20240414141212.png'
+import image3 from '../../assets/images/stage/微信图片_20240414141216.png'
 const imageData = ref([
-  {id: '1', title: 'ESG信息化管理平台'},
-  {id: '2', title: 'ESG企业服务平台⼯具与云计算平台'},
-  {id: '3', title: 'ESG投资与投后管理平台'}
+  {id: '1', title: ' ESG信息化管理平台', content: `提供全⾯的数据管理服务，包括数据采集、整合与清洗，以确保ESG数据的⾼
+质量和报告的精准性，从⽽为ESG评级提升打下坚实的数据基础。`, src: image1},
+  {id: '2', title: 'ESG企业服务平台⼯具与云计算平台', content: `深⼊洞察并全⾯满⾜客⼾的特定需求，提供与全球ESG动态标准同步的定制化
+报告服务。通过引导客⼾遵循国际最佳实践并在报告中突出其独特价值，我们
+的服务旨在帮助企业塑造其可持续发展的形象，并在激烈的⾏业竞争中增强其
+竞争⼒和影响⼒，从⽽促进其⻓期成功和增⻓。`, src: image2},
+  {id: '3', title: 'ESG投资与投后管理平台', content: `根据数据库找到⾏业关注投资⼈，分析其ESG倾向，协助调整沟通策略与披露
+重点.`, src: image3}
 ])
 </script>
-
 
 <template>
   <main class="main">
     <section class="grid popout">
       <article class="container">
-        <!-- <div class="content">
-          <h6>Smartesg相信资本向善，积极推动低碳转型与绿⾊⾦融相关服务，提供全⾯的
-ESG产业链服务。在投资⼈服务⽅⾯，涵盖ESG尽调与市场分析、ESG投资策略整合、ESG
-投资组合⽓候⻛险管理、以及投后管理与被投企业互动等领域。致⼒于实现从“选投管
-退”全链条可持续发展，以及其后投融资，绿⾊⾦融以及转型⾦融的专题研究。通过与
-MSCI与标普合作，量化⽓候⻛险为投资⼈提供专业定制化的ESG整合解决⽅案与策略，积
-极应对⽓候变化，加速低碳转型。
+        <div class="content">
+          <h6>SmartESG致⼒于提供全⽅位的ESG服务，以助⼒企业持续、系统地推进
+其可持续发展战略。服务覆盖了ESG策略规划、实施⽀持到后期的监测与报告，构建
+了⼀个结构化的服务体系。
           </h6>
-        </div> -->
+        </div>
         <div class="media">
           <div class="flex-card" v-for="(item, index) in imageData" :key="item.id">
-            <img src="@/assets/images/微信图片_20240411141725.jpg" />
+            <img :src="item.src" />
             <div>
               <b>{{index + 1}}</b>
-              <h6>{{item.title}}</h6>
+              <div>
+                <h6>{{item.title}}</h6>
+                <p>{{item.content}}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -41,7 +48,7 @@ MSCI与标普合作，量化⽓候⻛险为投资⼈提供专业定制化的ESG�
     position: relative;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    max-width: 1040px;
+    max-width: 800px;
     margin: 0 auto;
     .container {
       .content {
@@ -50,11 +57,11 @@ MSCI与标普合作，量化⽓候⻛险为投资⼈提供专业定制化的ESG�
       }
       .media {
         display: flex;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
         flex-wrap: wrap;
         @media screen and (max-width: 600px) {
           .flex-card {
-            margin: 0 2rem;
+            // margin: 0 2rem;
             width: 100%;
             img {
               width: 100%;
@@ -63,20 +70,43 @@ MSCI与标普合作，量化⽓候⻛险为投资⼈提供专业定制化的ESG�
         }
         .flex-card {
           width: 400px;
+          height: 300px;
           display: flex;
           flex-direction: column;
           // align-items: center;
           gap: 1rem;
+          position: relative;
+          // margin-bottom: 2rem;
+          >div {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+            width: 100%;
+
+          }
           img {
             width: 100%;
+            height: 100%;
           }
           >div {
             display: flex;
             align-self: baseline;
+            gap: 1rem;
+            >div {
+              display: flex;
+              flex-direction: column;
+              gap: .5rem;
+              p {
+                text-indent: .5rem;
+              }
+            }
           }
           h6 {
             text-align: left;
-            margin-left: 1rem;
+            // margin-left: 1rem;
+            margin-bottom: 0!important;
+            font-size: 1.2rem;
           }
           b {
             font-size: 3rem;
@@ -99,6 +129,16 @@ MSCI与标普合作，量化⽓候⻛险为投资⼈提供专业定制化的ESG�
     section {
       padding-top: 5rem;
       padding-bottom: 5rem;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    section {
+      max-width: 800px;
+    }
+  }
+  @media screen and (max-width: 799px) {
+    section {
+      max-width: 400px;
     }
   }
 }

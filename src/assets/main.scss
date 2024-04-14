@@ -60,11 +60,18 @@ body {
 	margin-bottom: 0 !important;
 }
 
+@media screen and (max-width: 600px) {
+	#app {
+		width: 100vw;
+	}
+}
+
 #app {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
+	// overflow-x: hidden;
 }
 
 #app > * {
@@ -158,4 +165,17 @@ h6 {
 
 :deep(.el-popper) {
   border: none!important;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+p:not(.card-username) {
+	font-size: 14px;
 }

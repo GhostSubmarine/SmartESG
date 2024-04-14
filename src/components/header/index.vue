@@ -1,29 +1,24 @@
 <script setup lang="ts">
-import 'element-plus/es/components/dropdown/style/css'
-import 'element-plus/es/components/dropdown-item/style/css'
-import 'element-plus/es/components/dropdown-menu/style/css'
-import 'element-plus/es/components/dialog/style/css'
-import 'element-plus/es/components/form/style/css'
-import 'element-plus/es/components/form-item/style/css'
-import 'element-plus/es/components/input/style/css'
-import 'element-plus/es/components/button/style/css'
-import 'element-plus/es/components/space/style/css'
-import { ElDropdownMenu, ElDropdown, ElDropdownItem, ElDialog, ElForm, ElFormItem, ElInput, ElButton, ElSpace } from 'element-plus';
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const dialogVisible = ref(false)
 const active = ref(0)
+const subActive = ref(0)
 const menuClass = ref('')
 const toggle = ref(false)
 const clickToggle = () => {
   toggle.value = !toggle.value
 }
+const showSubMenu = ref(false)
+const showPopup = ref(false)
 watch(
   () => router.currentRoute.value,
   (newValue: any) => {
+    // showPopup.value = false
     window.scrollTo(0, 0)
-    active.value = +newValue.query.active
+    active.value = +newValue.query.active?.split('-')?.[0]
+    subActive.value = +newValue.query.active?.split('-')?.[1]
   },
   { immediate: true }
 )
@@ -36,171 +31,162 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.body.removeEventListener('wheel', changeHeader)
 })
+const language = ref('中文')
+const changeLanguage = () => {
+  language.value === '中文' ? language.value = '英文' : language.value = '中文'
+}
+const openSubMenu = () => {
+  if (showPopup.value) {
+    showSubMenu.value = !showSubMenu.value
+    return
+  }
+  else {
+    showSubMenu.value = true;
+  }
+  document.addEventListener("click", clickOutSide);
+};
+//判断点击元素外部时关闭弹框
+const clickOutSide = (e: any) => {
+  let submMnu = document.getElementById("subMenu");
+  // 判断鼠标点击到触发按钮和弹出框外的区域
+  if (submMnu &&  !submMnu.contains(e.target)) {
+    showSubMenu.value = false;
+    document.removeEventListener("click", clickOutSide)
+  }
+}
+const changeShowPopup = () => {
+  showPopup.value = !showPopup.value
+}
 </script>
 <template>
   <header class="header">
     <article class="container">
-      <!-- <div>SmartESG | 司⻢致信息科技</div> -->
       <RouterLink to="/" style="height: 3rem; position: relative;">
-        <img style="height: 5rem; position: absolute; top: -1rem;" src="@/assets/images/green-removebg-preview.png" />
+        <img @click="showPopup && changeShowPopup" style="height: 5rem; position: absolute; top: -1rem;" src="@/assets/images/green-removebg-preview.png" />
       </RouterLink>
       <nav class="main-navigation">
-        <button class="menu-toggle" >A</button>
+        <button class="menu-toggle" @click="changeShowPopup">A</button>
         <div class="menu-wrapper" id="menu">
           <ul class="menu" :class="menuClass">
-            <li class="menu-item">
-              <el-dropdown class="cus-dropdown">
-                <a :class="{
-                  active: active === 1
-                }" href="#">解决⽅案中⼼</a>
-                <template #dropdown>
-                  <el-dropdown-menu class="cus-dropdown-menu">
-                    <el-dropdown-item>
-                      <RouterLink to="/enterpriseEnd">
-                        ESG企业端解决⽅案
-                      </RouterLink>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <RouterLink to="/investor">
-                        ESG投资⼈解决⽅案
-                      </RouterLink>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <RouterLink to="/comprehensiveRating">
-                        评级综合解决⽅案
-                      </RouterLink>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <RouterLink to="/carbonAndClimate">
-                        碳与⽓候解决⽅案
-                      </RouterLink>
-                    </el-dropdown-item>
-                  </el-dropdown-menu>
-                </template>
-              </el-dropdown>
+            <li class="menu-item" @mouseenter="openSubMenu">
+              <a :class="{
+                active: active === 1
+              }" href="#">解决⽅案中⼼</a>
+              <ul class="sub-menu" v-show="showSubMenu" id="subMenu" @click="showSubMenu = false">
+                <li class="menu-item">
+                  <RouterLink to="enterpriseEnd?active=1-1"> ESG企业端解决⽅案</RouterLink>
+                </li>
+                <li class="menu-item">
+                  <RouterLink to="investor?active=1-2">ESG投资⼈解决⽅案</RouterLink>
+                </li>
+                <li class="menu-item">
+                  <RouterLink to="comprehensiveRating?active=1-3">评级综合解决⽅案</RouterLink>
+                </li>
+                <li class="menu-item">
+                  <RouterLink to="carbonAndClimate?active=1-4">碳与⽓候解决⽅案</RouterLink>
+                </li>
+              </ul>
             </li>
             <li class="menu-item">
-              <RouterLink to="/stage" :class="{
+              <RouterLink to="/stage?active=2" :class="{
                   active: active === 2
                 }">
                 ESG数智化平台
               </RouterLink>
             </li>
             <li class="menu-item">
-              <RouterLink to="/aboutUs?" :class="{
+              <RouterLink to="/aboutUs?active=3"  :class="{
                   active: active === 3
                 }">
                 关于我们
               </RouterLink>
             </li>
             <li class="menu-item">
-              <a href="#">中⽂/英⽂转换</a>
+              <a href="#" :title="`切换${language === '中文' ? '英文' : '中文'}`" @click="changeLanguage">
+                {{language}}
+              </a>
             </li>
             <li class="menu-item">
               <a href="#" @click="dialogVisible = true">⽤⼾登录</a>
+            </li>
+          </ul>
+          <ul class="popup-menu menu" :class="menuClass" v-show="showPopup">
+            <li class="menu-item" @mouseenter="openSubMenu">
+              <a :class="{
+                active: active === 1
+              }">解决⽅案中⼼</a>
+              <ul class="sub-menu" v-show="showSubMenu" id="subMenu" @click="showSubMenu = false">
+                <li class="menu-item">
+                  <RouterLink :class="{
+                active: subActive === 1
+              }" @click="changeShowPopup" to="enterpriseEnd?active=1-1"> ESG企业端解决⽅案</RouterLink>
+                </li>
+                <li class="menu-item">
+                  <RouterLink :class="{
+                active: subActive === 2
+              }" @click="changeShowPopup" to="investor?active=1-2">ESG投资⼈解决⽅案</RouterLink>
+                </li>
+                <li class="menu-item">
+                  <RouterLink :class="{
+                active: subActive === 2
+              }" @click="changeShowPopup" to="comprehensiveRating?active=1-3">评级综合解决⽅案</RouterLink>
+                </li>
+                <li class="menu-item">
+                  <RouterLink :class="{
+                active: subActive === 4
+              }" @click="changeShowPopup" to="carbonAndClimate?active=1-4">碳与⽓候解决⽅案</RouterLink>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <RouterLink @click="changeShowPopup" to="/stage?active=2" :class="{
+                  active: active === 2
+                }">
+                ESG数智化平台
+              </RouterLink>
+            </li>
+            <li class="menu-item">
+              <RouterLink @click="changeShowPopup" to="/aboutUs?active=3" :class="{
+                  active: active === 3
+                }">
+                关于我们
+              </RouterLink>
+            </li>
+            <li class="menu-item">
+              <a href="#" :title="`切换${language === '中文' ? '英文' : '中文'}`" @click="changeLanguage">
+                {{language}}
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" @click="changeShowPopup">⽤⼾登录</a>
             </li>
           </ul>
         </div>
       </nav>
     </article>
   </header>
-  <el-dialog
-    v-model="dialogVisible"
-    title="Tips"
-    width="500"
-  >
-    <el-form>
-
-    </el-form>
-    <template #footer>
-      <div class="dialog-footer">
-        <el-button @click="dialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogVisible = false">
-          Confirm
-        </el-button>
-      </div>
-    </template>
-  </el-dialog>
-  <el-dialog></el-dialog>
+  <div class="overlay" v-show="showPopup"></div>
 </template>
 
 <style lang="scss" scoped>
-
-.cus-dropdown-menu {
-  // background-color: rgba(0, 0, 0, 0.6);
-  // border: 1px solid rgba(0, 0, 0, 0.6);
-  a {
-    // padding: 2rem 0.75rem;
-    width: 100%;
-    // height: 100%;
-    outline: none !important;
-    color: #f2f4f3;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    transition: 500ms padding cubic-bezier(0.075, 0.82, 0.165, 1);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-decoration: none;
-    // &:focus::after {
-    //   width: 100%;
-    //   opacity: .5;
-    // }
-    &:hover::after {
-      width: 100%;
-      opacity: .5;
-    }
-    // &.active::after {
-    //   width: 100%;
-    //   opacity: 1;
-    // }
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, rgba(99, 71, 255, 0) 0%, #6347ff 52.99%, rgba(99, 71, 255, 0) 100%);
-      height: 4px;
-      width: 0;
-      opacity: 0;
-      transition: 250ms all ease-out;
-    }
-  }
-}
-// .cus-dropdown {
-
-// }
-// .cus-dropdown-menu {
-  
-// }
-.cus-dialog {
-  display: flex;
-}
-@media screen and (max-width: 500px) {
-	.cus-dialog.el-dialog {
-		width: 300px !important;
-		padding: 10px 20px!important;
-		.el-form-item__label{
-			width: 68px!important;
-		}
-		.el-select,.el-input{
-			width: 180px!important;
-		}
-	}
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 .header {
   z-index: 100;
   position: sticky;
   top: 0;
-  color: #000000;
   .container {
-    background: rgba(0, 0, 0, 0.6);
+    background: #A1C3C5;
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
-    max-width: calc(880px - 12rem);
+    max-width: calc(1380px - 12rem);
     display: flex;
     align-items: center;
     padding-left: 1.5rem;
@@ -210,7 +196,6 @@ onBeforeUnmount(() => {
     width: calc(100% - 3rem);
     margin-left: auto;
     margin-right: auto;
-    color: #f2f4f3;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -247,7 +232,6 @@ onBeforeUnmount(() => {
       }
       .menu-wrapper {
         transition: all 500ms;
-        opacity: 0;
         .menu {
           text-align: center;
           // background: #121110;
@@ -255,6 +239,21 @@ onBeforeUnmount(() => {
           display: flex;
           justify-content: space-evenly;
           margin-block: 0;
+          visibility: hidden;
+          &.popup-menu {
+            position: absolute;
+            flex-direction: column;
+            width: 88%;
+            visibility: visible;
+            background: #A1C3C5;
+            top: 6rem;
+            .menu-item {
+              .sub-menu {
+                position: inherit;
+                top: 0;
+              }
+            }
+          }
           &.sticky .menu-item {
             a {
               padding: 1rem 0.75rem;
@@ -264,17 +263,17 @@ onBeforeUnmount(() => {
             display: flex;
             align-items: center;
             text-transform: uppercase;
-            position: unset;
+            position: relative;
             flex-direction: column;
             -webkit-user-select: none;
             user-select: none;
             a {
-              padding: 2rem 0.75rem;
+              padding: 1.5rem 0.75rem;
               width: 100%;
               // height: 100%;
               outline: none !important;
               color: #f2f4f3;
-              font-size: 12px;
+              font-size: 1.2rem;
               font-weight: 500;
               letter-spacing: 0.08em;
               transition: 500ms padding cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -287,9 +286,12 @@ onBeforeUnmount(() => {
               //   width: 100%;
               //   opacity: .5;
               // }
+              // &:hover+.sub-menu {
+              //   display: flex;
+              // }
               &:hover::after {
                 width: 100%;
-                opacity: .5;
+                opacity: 1;
               }
               &.active::after {
                 width: 100%;
@@ -308,12 +310,69 @@ onBeforeUnmount(() => {
                 transition: 250ms all ease-out;
               }
             }
+            .sub-menu {
+              position: absolute;
+              top: 5.5rem;
+              border-radius: 8px;
+              display: flex;
+              // width: 712px;
+              // max-width: 712px;
+              left: 0;
+              padding: 0;
+              margin: 0;
+              background: #A1C3C5;
+              flex-direction: column;
+              .menu-item {
+                a {
+                  width: 100%;
+                  // height: 100%;
+                  outline: none !important;
+                  color: #f2f4f3;
+                  font-size: 1.2rem;
+                  font-weight: 500;
+                  letter-spacing: 0.08em;
+                  transition: 500ms padding cubic-bezier(0.075, 0.82, 0.165, 1);
+                  position: relative;
+                  display: flex;
+                  justify-content: center;
+                  flex-direction: column;
+                  text-decoration: none;
+                  padding: 1rem 0.75rem;
+                  // &:focus::after {
+                  //   width: 100%;
+                  //   opacity: .5;
+                  // }
+                  &:hover::after {
+                    width: 100%;
+                    opacity: .5;
+                  }
+                  &.active::after {
+                    width: 100%;
+                    opacity: 1;
+                  }
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    background: linear-gradient(90deg, rgba(99, 71, 255, 0) 0%, #6347ff 52.99%, rgba(99, 71, 255, 0) 100%);
+                    height: 4px;
+                    width: 0;
+                    opacity: 0;
+                    transition: 250ms all ease-out;
+                  }
+                }
+              }
+            }
           }
         }
       }
       @media screen and (min-width: 960px) {
         .menu-wrapper {
-          opacity: 1;
+          .menu {
+            visibility: visible;
+          }
         }
       }
     }
