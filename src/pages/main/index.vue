@@ -249,7 +249,7 @@
     // padding-top: 3rem;
     padding-bottom: 3rem;
     article.container {
-      max-width: 1440px;
+      max-width: calc(1380px - 10.5rem);
     }
     article {
       .media {
@@ -271,10 +271,14 @@
           .flex-card {
             // background-color: #162227;
             color: #dee2e6;
+            &.large {
+              padding: 4rem 0!important;
+            }
             .card-content {
+              align-items: flex-start;
               .card-media-wrapper {
-                flex: 0 1 60%;
-                max-width: 40rem;
+                flex: 0 1 50%;
+                max-width: 25rem;
                 .card-media {
                   position: relative;
                   h4 {
@@ -401,7 +405,7 @@
 
     .container {
       width: 100%;
-      max-width: 1440px;
+      max-width: calc(1380px - 10.5rem);
       margin-left: auto;
       margin-right: auto;
 

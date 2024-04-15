@@ -25,11 +25,11 @@ import Header from '@/components/header/index.vue'
 
 <style lang="scss" scoped>
 .footer {
-	padding-top: 4rem;
-  max-width: 1440px;
+	// padding-top: 4rem;
+  max-width: calc(1380px - 10.5rem);
   margin: 0 auto;
   width: 100%;
-  background-color: #706b49;
+  background-color: #496D70;
   border-radius: 8px;
   margin-bottom: 2rem;
   .continer {
@@ -40,7 +40,7 @@ import Header from '@/components/header/index.vue'
     .footer-menu {
       display: flex;
       justify-content: space-between;
-      padding: 3rem 0 0;
+      // padding: 3rem 0 0;
       position: relative;
       @media screen and (min-width: 640px) {
         &::after {
@@ -54,8 +54,8 @@ import Header from '@/components/header/index.vue'
         }
       }
       nav {
-        padding-bottom: calc(1rem + 1px);
-        margin-bottom: 1rem;
+        // padding-bottom: calc(1rem + 1px);
+        margin: 1rem 0;
         position: relative;
         h4 {
           padding-bottom: 0.5rem;
@@ -89,24 +89,24 @@ import Header from '@/components/header/index.vue'
 @media screen and (min-width: 640px) {
 
 	.footer {
-		padding-top: 2rem;
-		padding-bottom: 2rem;
+		// padding-top: 2rem;
+		// padding-bottom: 2rem;
 	}
 }
 
 @media screen and (min-width: 960px) {
 
 	.footer {
-		padding-top: 3rem;
-		padding-bottom: 3rem;
+		// padding-top: 3rem;
+		// padding-bottom: 3rem;
 	}
 }
 
 @media screen and (min-width: 1280px) {
 
 	.footer {
-		padding-top: 4rem;
-		padding-bottom: 4rem;
+		// padding-top: 4rem;
+		// padding-bottom: 4rem;
 	}
 }
 </style>

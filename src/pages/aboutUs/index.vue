@@ -4,7 +4,7 @@
       <article class="container">
         <div class="content container">
           <div class="section-body">
-            <h3 class="ng-star-inserted">关于我们</h3>
+            <!-- <h3 class="ng-star-inserted">关于我们</h3> -->
             <p>汇聚了中国、硅⾕及华尔街的优秀⼈才，团队成员分布在北京、硅⾕两地。 曾⼯作多年于
               MSCI、标普、CDP、世界资源研究所，脸书，美国环保局，国家电⽹等中国⼤中型企业和
               机构，具有全球领先ESG战略咨询服务经验。</p>
@@ -172,14 +172,14 @@
 }
 
 .container {
-  width: calc(100% - 3rem);
-  max-width: 1280px;
+  width: 100%;
+  max-width: calc(1380px - 10.5rem);
   margin-left: auto;
   margin-right: auto;
 
   .content {
     width: 100%;
-    max-width: calc(1280px - 3rem);
+    max-width: calc(1380px - 10.5rem);
 
     .section-body {
       h3 {
@@ -187,7 +187,7 @@
       }
 
       p {
-        max-width: 35rem;
+        max-width: calc(1380px - 10.5rem);
         margin-left: auto;
         margin-right: auto;
       }
@@ -327,7 +327,7 @@
     padding-top: 0;
     padding-bottom: 3rem;
     article.container {
-      max-width: 1440px;
+      max-width: calc(1380px - 10.5rem);
     }
     article {
       .media {

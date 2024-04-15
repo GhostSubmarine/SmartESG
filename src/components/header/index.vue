@@ -10,6 +10,11 @@ const toggle = ref(false)
 const clickToggle = () => {
   toggle.value = !toggle.value
 }
+const goEnterpriseEnd = () => {
+  router.push({
+    path: '/enterpriseEnd?active=1-1'
+  })
+}
 const showSubMenu = ref(false)
 const showPopup = ref(false)
 watch(
@@ -62,7 +67,7 @@ const changeShowPopup = () => {
   <header class="header">
     <article class="container">
       <RouterLink to="/" style="height: 3rem; position: relative;">
-        <img @click="showPopup && changeShowPopup" style="height: 5rem; position: absolute; top: -1rem;" src="@/assets/images/green-removebg-preview.png" />
+        <img @click="showPopup && changeShowPopup" style="height: 8rem; position: absolute; top: -2.5rem;" src="@/assets/images/green-removebg-preview.png" />
       </RouterLink>
       <nav class="main-navigation">
         <button class="menu-toggle" @click="changeShowPopup">A</button>
@@ -71,7 +76,7 @@ const changeShowPopup = () => {
             <li class="menu-item" @mouseenter="openSubMenu">
               <a :class="{
                 active: active === 1
-              }" href="#">解决⽅案中⼼</a>
+              }" href="#" @click="goEnterpriseEnd">解决⽅案中⼼</a>
               <ul class="sub-menu" v-show="showSubMenu" id="subMenu" @click="showSubMenu = false">
                 <li class="menu-item">
                   <RouterLink to="enterpriseEnd?active=1-1"> ESG企业端解决⽅案</RouterLink>
@@ -183,7 +188,7 @@ const changeShowPopup = () => {
   position: sticky;
   top: 0;
   .container {
-    background: #A1C3C5;
+    background: #496D70;
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
     max-width: calc(1380px - 12rem);
@@ -245,7 +250,7 @@ const changeShowPopup = () => {
             flex-direction: column;
             width: 88%;
             visibility: visible;
-            background: #A1C3C5;
+            background: #496D70;
             top: 6rem;
             .menu-item {
               .sub-menu {
@@ -320,7 +325,7 @@ const changeShowPopup = () => {
               left: 0;
               padding: 0;
               margin: 0;
-              background: #A1C3C5;
+              background: #496D70;
               flex-direction: column;
               .menu-item {
                 a {
