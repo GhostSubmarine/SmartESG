@@ -147,26 +147,24 @@
   }
 }
 .main {
-  // display: flex;
-  // flex-direction: column;
   @media screen and (min-width: 600px) {
     section {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 
   @media screen and (min-width: 800px) {
     section {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
   }
 
   @media screen and (min-width: 960px) {
     section {
-      padding-top: 5.5rem;
-      padding-bottom: 5.5rem;
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
     }
   }
 }
@@ -316,10 +314,10 @@
 
 
 .container {
-  width: calc(100% - 3rem);
+  // width: calc(100% - 3rem);
   margin-left: auto;
   margin-right: auto;
-  max-width: calc(1280px - 12rem);
+  // max-width: calc(1280px - 12rem);
 }
 .main {
   section.carousel {

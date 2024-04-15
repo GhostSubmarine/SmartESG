@@ -32,17 +32,32 @@ Lewis等机构沟通，协助准备反驳⽂件，并提供互动与总结等服
 
 <template>
   <main class="main">
+    <section class="section-full-width">
+      <article class="container">
+        <div class="content container">
+          <div class="section-body">
+            <!-- <h3 class="ng-star-inserted">关于我们</h3> -->
+            <p>Smartesg相信资本向善，积极推动低碳转型与绿⾊⾦融相关服务，提供全⾯
+的ESG产业链服务。在投资⼈服务⽅⾯，涵盖ESG尽调与市场分析、ESG投资策略整合、
+ESG投资组合⽓候⻛险管理、以及投后管理与被投企业互动等领域。致⼒于实现从“选
+投 管 退”全链条可持续发展，以及其后投融资，绿⾊⾦融以及转型⾦融的专题研究。通
+过与MSCI与标普合作，量化⽓候⻛险为投资⼈提供专业定制化的ESG整合解决⽅案与策
+略，积极应对⽓候变化，加速低碳转型。</p>
+          </div>
+        </div>
+      </article>
+    </section>
     <section class="grid popout">
       <article class="container">
-        <div class="content">
-          <h6>Smartesg相信资本向善，积极推动低碳转型与绿⾊⾦融相关服务，提供全⾯
+        <!-- <div class="content">
+          <p>Smartesg相信资本向善，积极推动低碳转型与绿⾊⾦融相关服务，提供全⾯
 的ESG产业链服务。在投资⼈服务⽅⾯，涵盖ESG尽调与市场分析、ESG投资策略整合、
 ESG投资组合⽓候⻛险管理、以及投后管理与被投企业互动等领域。致⼒于实现从“选
 投 管 退”全链条可持续发展，以及其后投融资，绿⾊⾦融以及转型⾦融的专题研究。通
 过与MSCI与标普合作，量化⽓候⻛险为投资⼈提供专业定制化的ESG整合解决⽅案与策
 略，积极应对⽓候变化，加速低碳转型。
-          </h6>
-        </div>
+          </p>
+        </div> -->
         <div class="media">
           <div class="flex-card" v-for="(item, index) in imageData" :key="item.id">
             <img :src="item.src" />

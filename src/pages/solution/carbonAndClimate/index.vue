@@ -22,15 +22,28 @@ const imageData = ref([
 
 <template>
   <main class="main">
+    <section class="section-full-width">
+      <article class="container">
+        <div class="content container">
+          <div class="section-body">
+            <!-- <h3 class="ng-star-inserted">关于我们</h3> -->
+            <p>Smart ESG与MSCI&标普全球等知名机构合作，量化⽓候⻛险，为客⼾提供
+实操性的解决⽅案，包括但不限于供物理⻛险与转型⻛险识别服务、产品碳⾜迹追踪、
+供应链管理以及碳中和路线图/SBTi服务，协助客⼾更加全⾯地了解和管理其⾯临的各种
+⻛险，积极应对⽓候变化，促进低碳转型。</p>
+          </div>
+        </div>
+      </article>
+    </section>
     <section class="grid popout">
       <article class="container">
-        <div class="content">
-          <h6>Smart ESG与MSCI&标普全球等知名机构合作，量化⽓候⻛险，为客⼾提供
+        <!-- <div class="content">
+          <p>Smart ESG与MSCI&标普全球等知名机构合作，量化⽓候⻛险，为客⼾提供
 实操性的解决⽅案，包括但不限于供物理⻛险与转型⻛险识别服务、产品碳⾜迹追踪、
 供应链管理以及碳中和路线图/SBTi服务，协助客⼾更加全⾯地了解和管理其⾯临的各种
 ⻛险，积极应对⽓候变化，促进低碳转型。
-          </h6>
-        </div>
+          </p>
+        </div> -->
         <div class="media">
           <div class="flex-card" v-for="(item, index) in imageData" :key="item.id">
             <img :src="item.src" />

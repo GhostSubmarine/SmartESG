@@ -17,18 +17,34 @@ CSA）评估后，可申请CBR报告服务。CBR可为贵公司提供可持续�
 
 <template>
   <main class="main">
+    <section class="section-full-width">
+      <article class="container">
+        <div class="content container">
+          <div class="section-body">
+            <!-- <h3 class="ng-star-inserted">关于我们</h3> -->
+            <p>Smart ESG与标普全球、MSCI等机构合作，推出了⼀系列评级管理服务，旨
+在帮助企业全⾯了解其可持续发展绩效，并在全球市场中展现出竞争优势。具体包括，
+MSCI预评级服务， 标普CSA预评级服务以及CDP预评分服务。其中，MSCI及标普预评
+级服务可以由MSCI及标普研究员直接开展，辅以问卷填报，披露提升及同⾏差距分析等
+服务，为企业ESG绩效整体提升保驾护航。 此外，Smart ESG积极与中证，恒⽣，
+FTSE，Sustainlytics，Ecovadise，GRESB，ISS及Glasslewis等国内外主流评级机构保
+持沟通，基于客⼾需求，有针对性的开展相关业务。</p>
+          </div>
+        </div>
+      </article>
+    </section>
     <section class="grid popout">
       <article class="container">
-        <div class="content">
-          <h6>Smart ESG与标普全球、MSCI等机构合作，推出了⼀系列评级管理服务，旨
+        <!-- <div class="content">
+          <p>Smart ESG与标普全球、MSCI等机构合作，推出了⼀系列评级管理服务，旨
 在帮助企业全⾯了解其可持续发展绩效，并在全球市场中展现出竞争优势。具体包括，
 MSCI预评级服务， 标普CSA预评级服务以及CDP预评分服务。其中，MSCI及标普预评
 级服务可以由MSCI及标普研究员直接开展，辅以问卷填报，披露提升及同⾏差距分析等
 服务，为企业ESG绩效整体提升保驾护航。 此外，Smart ESG积极与中证，恒⽣，
 FTSE，Sustainlytics，Ecovadise，GRESB，ISS及Glasslewis等国内外主流评级机构保
 持沟通，基于客⼾需求，有针对性的开展相关业务。
-          </h6>
-        </div>
+          </p>
+        </div> -->
         <div class="media">
           <div class="flex-card" v-for="(item, index) in imageData" :key="item.id">
             <img :src="item.src" />

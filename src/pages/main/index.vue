@@ -225,9 +225,9 @@
         h3 {
           font-size: 2.5rem;
         }
-        p {
-          font-size: 1rem;
-        }
+        // p {
+        //   font-size: 1rem;
+        // }
       }
     }
   }

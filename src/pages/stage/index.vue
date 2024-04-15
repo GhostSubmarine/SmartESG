@@ -17,14 +17,26 @@ const imageData = ref([
 
 <template>
   <main class="main">
+    <section class="section-full-width">
+      <article class="container">
+        <div class="content container">
+          <div class="section-body">
+            <!-- <h3 class="ng-star-inserted">关于我们</h3> -->
+            <p>SmartESG致⼒于提供全⽅位的ESG服务，以助⼒企业持续、系统地推进
+其可持续发展战略。服务覆盖了ESG策略规划、实施⽀持到后期的监测与报告，构建
+了⼀个结构化的服务体系。</p>
+          </div>
+        </div>
+      </article>
+    </section>
     <section class="grid popout">
       <article class="container">
-        <div class="content">
-          <h6>SmartESG致⼒于提供全⽅位的ESG服务，以助⼒企业持续、系统地推进
+        <!-- <div class="content">
+          <p>SmartESG致⼒于提供全⽅位的ESG服务，以助⼒企业持续、系统地推进
 其可持续发展战略。服务覆盖了ESG策略规划、实施⽀持到后期的监测与报告，构建
 了⼀个结构化的服务体系。
-          </h6>
-        </div>
+          </p>
+        </div> -->
         <div class="media">
           <div class="flex-card" v-for="(item, index) in imageData" :key="item.id">
             <img :src="item.src" />
