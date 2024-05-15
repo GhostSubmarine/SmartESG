@@ -67,7 +67,7 @@ const changeShowPopup = () => {
   <header class="header">
     <article class="container">
       <RouterLink to="/" style="height: 3rem; position: relative;">
-        <img @click="showPopup && changeShowPopup" style="height: 8rem; position: absolute; top: -2.5rem;" src="@/assets/images/green-removebg-preview.png" />
+        <img @click="showPopup && changeShowPopup" style="height: 8rem; position: absolute; top: -2.5rem;" src="@/assets/images/green-removebg-preview.jpg" />
       </RouterLink>
       <nav class="main-navigation">
         <button class="menu-toggle" @click="changeShowPopup">A</button>
@@ -256,6 +256,8 @@ const changeShowPopup = () => {
               .sub-menu {
                 position: inherit;
                 top: 0;
+                transform: translateX(0);
+                left: 0;
               }
             }
           }
@@ -322,7 +324,8 @@ const changeShowPopup = () => {
               display: flex;
               // width: 712px;
               // max-width: 712px;
-              left: 0;
+              left: 50%;
+              transform: translateX(-50%);
               padding: 0;
               margin: 0;
               background: #496D70;
