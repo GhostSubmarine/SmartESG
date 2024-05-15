@@ -25,31 +25,28 @@ const imageData = ref([
 
 <template>
   <main class="main">
-    <section class="section-full-width">
-      <article class="container">
-        <div class="content container">
-          <div class="section-body">
-            <!-- <h3 class="ng-star-inserted">关于我们</h3> -->
-            <p>SmartESG提供ESG专业全流程服务，从合规报告、认知提升、⽬标设定，内部管理KPI及外部利益相关⽅沟通策略等⽅⾯，陪伴企业逐步陪伴企业成⻓，迈向可持续领导⼒。</p>
-          </div>
+    <section>
+      <article>
+        <div class="content">
+          <h2>SmartESG致⼒于提供全⽅位的ESG服务，以助⼒企业持续、系统地推进其可持续发展战略。服务覆盖了ESG策略规划、实施⽀持到后期的监测与报告，构建了⼀个结构化的服务体系。</h2>
         </div>
-      </article>
-    </section>
-    <section class="grid popout">
-      <article class="container">
-        <!-- <div class="content">
-          <p style="text-indent: 1rem;">SmartESG提供ESG专业全流程服务，从合规报告、认知提升、⽬标设定，内部
-管理KPI及外部利益相关⽅沟通策略等⽅⾯，陪伴企业逐步陪伴企业成⻓，迈向可持续领导⼒。
-          </p>
-        </div> -->
         <div class="media">
-          <div class="flex-card" v-for="(item, index) in imageData" :key="item.id">
-            <img :src="item.src" />
-            <div>
-              <b>{{index + 1}}</b>
-              <div>
-                <h6>{{item.title}}</h6>
-                <p>{{item.content}}</p>
+          <div class="grid-wrapper">
+            <div class="flex-card  hover has-cta" v-for="item in imageData" :key="item.id + ''">
+              <div class="card-content">
+                <div class="card-media-wrapper" :data-category="item.title">
+                  <div class="card-media" :style="{ backgroundImage: 'url(' + item.src + ')' }" />
+                </div>
+                <div class="text-section">
+                  <h3 class="ellipses-overflow">
+                    {{ item.content }}
+                  </h3> 
+                  <a class="cta-text"
+                    href="#"
+                    target="_blank">
+                    阅读 更多
+                  </a>
+                </div>
               </div>
             </div>
           </div>

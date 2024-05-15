@@ -14,33 +14,28 @@ const imageData = ref([
 
 <template>
   <main class="main">
-    <section class="section-full-width">
-      <article class="container">
-        <div class="content container">
-          <div class="section-body">
-            <!-- <h3 class="ng-star-inserted">关于我们</h3> -->
-            <p>Smart ESG与MSCI&标普全球等知名机构合作，量化⽓候⻛险，为客⼾提供实操性的解决⽅案，包括但不限于供物理⻛险与转型⻛险识别服务、产品碳⾜迹追踪、供应链管理以及碳中和路线图/SBTi服务，协助客⼾更加全⾯地了解和管理其⾯临的各种⻛险，积极应对⽓候变化，促进低碳转型。</p>
-          </div>
+    <section>
+      <article>
+        <div class="content">
+          <h2>SmartESG致⼒于提供全⽅位的ESG服务，以助⼒企业持续、系统地推进其可持续发展战略。服务覆盖了ESG策略规划、实施⽀持到后期的监测与报告，构建了⼀个结构化的服务体系。</h2>
         </div>
-      </article>
-    </section>
-    <section class="grid popout">
-      <article class="container">
-        <!-- <div class="content">
-          <p>Smart ESG与MSCI&标普全球等知名机构合作，量化⽓候⻛险，为客⼾提供
-实操性的解决⽅案，包括但不限于供物理⻛险与转型⻛险识别服务、产品碳⾜迹追踪、
-供应链管理以及碳中和路线图/SBTi服务，协助客⼾更加全⾯地了解和管理其⾯临的各种
-⻛险，积极应对⽓候变化，促进低碳转型。
-          </p>
-        </div> -->
         <div class="media">
-          <div class="flex-card" v-for="(item, index) in imageData" :key="item.id">
-            <img :src="item.src" />
-            <div>
-              <b>{{index + 1}}</b>
-              <div>
-                <h6>{{item.title}}</h6>
-                <p>{{item.content}}</p>
+          <div class="grid-wrapper">
+            <div class="flex-card  hover has-cta" v-for="item in imageData" :key="item.id + ''">
+              <div class="card-content">
+                <div class="card-media-wrapper" :data-category="item.title">
+                  <div class="card-media" :style="{ backgroundImage: 'url(' + item.src + ')' }" />
+                </div>
+                <div class="text-section">
+                  <h3 class="ellipses-overflow">
+                    {{ item.content }}
+                  </h3> 
+                  <a class="cta-text"
+                    href="#"
+                    target="_blank">
+                    阅读 更多
+                  </a>
+                </div>
               </div>
             </div>
           </div>

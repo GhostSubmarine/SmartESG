@@ -12,36 +12,28 @@ const imageData = ref([
 
 <template>
   <main class="main">
-    <section class="section-full-width">
-      <article class="container">
-        <div class="content container">
-          <div class="section-body">
-            <!-- <h3 class="ng-star-inserted">关于我们</h3> -->
-            <p>Smart ESG与标普全球、MSCI等机构合作，推出了⼀系列评级管理服务，旨在帮助企业全⾯了解其可持续发展绩效，并在全球市场中展现出竞争优势。具体包括，MSCI预评级服务， 标普CSA预评级服务以及CDP预评分服务。其中，MSCI及标普预评级服务可以由MSCI及标普研究员直接开展，辅以问卷填报，披露提升及同⾏差距分析等服务，为企业ESG绩效整体提升保驾护航。 此外，Smart ESG积极与中证，恒⽣，FTSE，Sustainlytics，Ecovadise，GRESB，ISS及Glasslewis等国内外主流评级机构保持沟通，基于客⼾需求，有针对性的开展相关业务。</p>
-          </div>
+    <section>
+      <article>
+        <div class="content">
+          <h2>SmartESG致⼒于提供全⽅位的ESG服务，以助⼒企业持续、系统地推进其可持续发展战略。服务覆盖了ESG策略规划、实施⽀持到后期的监测与报告，构建了⼀个结构化的服务体系。</h2>
         </div>
-      </article>
-    </section>
-    <section class="grid popout">
-      <article class="container">
-        <!-- <div class="content">
-          <p>Smart ESG与标普全球、MSCI等机构合作，推出了⼀系列评级管理服务，旨
-在帮助企业全⾯了解其可持续发展绩效，并在全球市场中展现出竞争优势。具体包括，
-MSCI预评级服务， 标普CSA预评级服务以及CDP预评分服务。其中，MSCI及标普预评
-级服务可以由MSCI及标普研究员直接开展，辅以问卷填报，披露提升及同⾏差距分析等
-服务，为企业ESG绩效整体提升保驾护航。 此外，Smart ESG积极与中证，恒⽣，
-FTSE，Sustainlytics，Ecovadise，GRESB，ISS及Glasslewis等国内外主流评级机构保
-持沟通，基于客⼾需求，有针对性的开展相关业务。
-          </p>
-        </div> -->
         <div class="media">
-          <div class="flex-card" v-for="(item, index) in imageData" :key="item.id">
-            <img :src="item.src" />
-            <div>
-              <b>{{index + 1}}</b>
-              <div>
-                <h6>{{item.title}}</h6>
-                <p>{{item.content}}</p>
+          <div class="grid-wrapper">
+            <div class="flex-card  hover has-cta" v-for="item in imageData" :key="item.id + ''">
+              <div class="card-content">
+                <div class="card-media-wrapper" :data-category="item.title">
+                  <div class="card-media" :style="{ backgroundImage: 'url(' + item.src + ')' }" />
+                </div>
+                <div class="text-section">
+                  <h3 class="ellipses-overflow">
+                    {{ item.content }}
+                  </h3> 
+                  <a class="cta-text"
+                    href="#"
+                    target="_blank">
+                    阅读 更多
+                  </a>
+                </div>
               </div>
             </div>
           </div>
