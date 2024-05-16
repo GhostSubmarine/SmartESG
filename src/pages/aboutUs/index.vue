@@ -57,18 +57,17 @@
 </template>
 
 <style lang="scss" scoped>
-* {
+.main * {
   box-sizing: border-box
 }
 .join-us {
-  width: 100%;
+  // width: 100%;
   .container {
     display: flex;
     flex-direction: column;
     background-image: url(../../assets/images/微信图片_20240411141725.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    max-width: unset;
     >div {
       text-align: center;
       padding: 2rem 0;

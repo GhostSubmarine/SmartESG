@@ -28,7 +28,7 @@ const imageData = ref([
     <section>
       <article>
         <div class="content">
-          <h2>SmartESG致⼒于提供全⽅位的ESG服务，以助⼒企业持续、系统地推进其可持续发展战略。服务覆盖了ESG策略规划、实施⽀持到后期的监测与报告，构建了⼀个结构化的服务体系。</h2>
+          <h2>SmartESG提供ESG专业全流程服务，从合规报告、认知提升、⽬标设定，内部管理KPI及外部利益相关⽅沟通策略等⽅⾯，陪伴企业逐步陪伴企业成⻓，迈向可持续领导⼒。</h2>
         </div>
         <div class="media">
           <div class="grid-wrapper">

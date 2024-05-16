@@ -33,12 +33,13 @@
 
     article {
       width: calc(100% - 3rem);
-      max-width: 1280px;
+      max-width: calc(1380px - 10.5rem);
       margin-left: auto;
       margin-right: auto;
 
       .content {
         width: 100%;
+        max-width: calc(1380px - 10.5rem);
         // max-width: calc(1380px - 10.5rem);
       }
 
@@ -46,7 +47,7 @@
         min-height: 28rem;
         margin-top: 4rem;
         .grid-wrapper {
-          max-width: 1280px;
+          max-width: calc(1380px - 10.5rem);
           margin-left: auto;
           margin-right: auto;
           display: grid;
