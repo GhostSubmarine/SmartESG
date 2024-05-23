@@ -79,16 +79,24 @@ const changeShowPopup = () => {
               }" href="#" @click="goEnterpriseEnd">解决⽅案中⼼</a>
               <ul class="sub-menu" v-show="showSubMenu" id="subMenu" @click="showSubMenu = false">
                 <li class="menu-item">
-                  <RouterLink to="enterpriseEnd?active=1-1"> ESG企业端解决⽅案</RouterLink>
+                  <RouterLink :class="{
+                active: subActive === 1
+              }" to="enterpriseEnd?active=1-1"> ESG企业端解决⽅案</RouterLink>
+                </li>
+                <li class="menu-item" >
+                  <RouterLink :class="{
+                active: subActive === 2
+              }" to="investor?active=1-2">ESG投资⼈解决⽅案</RouterLink>
+                </li>
+                <li class="menu-item" >
+                  <RouterLink :class="{
+                active: subActive === 3
+              }" to="comprehensiveRating?active=1-3">评级综合解决⽅案</RouterLink>
                 </li>
                 <li class="menu-item">
-                  <RouterLink to="investor?active=1-2">ESG投资⼈解决⽅案</RouterLink>
-                </li>
-                <li class="menu-item">
-                  <RouterLink to="comprehensiveRating?active=1-3">评级综合解决⽅案</RouterLink>
-                </li>
-                <li class="menu-item">
-                  <RouterLink to="carbonAndClimate?active=1-4">碳与⽓候解决⽅案</RouterLink>
+                  <RouterLink :class="{
+                active: subActive === 4
+              }" to="carbonAndClimate?active=1-4">碳与⽓候解决⽅案</RouterLink>
                 </li>
               </ul>
             </li>

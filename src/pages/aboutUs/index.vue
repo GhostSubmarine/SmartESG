@@ -195,7 +195,6 @@ h2 {
   background-color: #162227;
   border-radius: 8px 8px 8px 0;
   padding: 1.5rem;
-  padding-bottom: 6rem;
   display: inline-block;
   position: relative;
   color: #dee2e6;
