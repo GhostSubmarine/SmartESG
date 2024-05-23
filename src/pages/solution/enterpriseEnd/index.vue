@@ -10,15 +10,15 @@ import image7 from '../../../assets/images/enterpriseEnd/微信图片_2024041413
 import image8 from '../../../assets/images/enterpriseEnd/微信图片_20240414132135.png'
 import image9 from '../../../assets/images/enterpriseEnd/微信图片_20240414132138.png'
 const imageData = ref([
-  {id: '1', title: '同⾏最佳实践：ESG指标对标分析服', content: `我们将对您所在⾏业的同⾏业企业进⾏深⼊研究，梳理其ESG指标体系，以帮助您了解资本市场和主要利益相关⽅的期待。`, src: image1},
-  {id: '2', title: 'ESG披露与报告', content: `我们采⽤1+N的模式，为企业提供全⾯的ESG报告服务，以展⽰其关键可持续发展绩效。我们将围绕披露窗⼝期，从全年⼯作规划的视⻆出发，推进ESG披露的深化。`, src: image2},
-  {id: '3', title: 'ESG内部管理体系', content: `我们将梳理ESG领域的合规要求、最佳实践以及评级标准，帮助您了解市场预期，并建⽴中国特⾊的ESG⾏业管理矩阵，确保管理体系与实际情况相匹配。`, src: image3},
-  {id: '4', title: 'ESG投资⼈沟通与互动', content: `根据投资⼈的ESG倾向，及时调整披露重点，确保您的ESG信息与投资者的关注点保持⼀致，提升沟通效果和投资者满意度。`, src: image4},
-  {id: '5', title: 'ESG专题研究服务',content: `我们将根据贵公司的具体情况和需求，提出针对性的专题研究建议。这些专题可能涵盖⽓候⻛险评估、绿⾊建筑、治理架构等内容。`, src: image5},
-  {id: '6', title: '能⼒建设与培训', content: `根据客⼾的需求和现状，提供普适性议题培训和专题培训服务。普适性培训涵盖ESG基础知识、可持续发展理念和相关法规法规等内容，以帮助员⼯全⾯了解ESG概念和实践。专题培训则针对具体的ESG议题，如⽓候变化、社会责任、公司治理等，深⼊探讨，并提供实际操作指导和案例分享，帮助企业更好地应对相关挑战和机遇。`, src: image6},
-  {id: '7', title: '数智化产品研发', content: `我们利⽤数智化⼿段，为您开发定制化⼯具，帮助贵司轻松应对不同利益相关⽅的需求。这些⼯具涵盖政策法规监测、会议活动管理、ESG披露跟踪等多个⽅⾯，让客⼾能够更⾼效地管理与利益相关⽅的沟通与互动，聚焦于创造附加值更⾼的⼯作。`, src: image7},
-  {id: '8', title: 'ESG战略', content: `与客⼾合作，评估其与环境（Environmental）、社会（Social）、公司治理（Governance）相关的关键议题，并确定对企业⻓期价值和可持续发展最为重要的⽅⾯，识别与企业业务战略密切相关的ESG⻛险和机遇。`, src: image8},
-  {id: '9', title: '实质性议题影响分析', content: `使⽤双重重要性原则，通过深⼊研究和分析，识别与影响重⼤、财务重⼤的实质性议题，如⽓候变化、⼈权、社会公正、治理结构等。在确定议题时，我们将根据其对企业战略⽬标和利益相关⽅的影响程度进⾏优先级排定，以便客⼾能够集中精⼒应对最重要和紧迫的问题。`, src: image9}
+  { id: '1', title: '同⾏最佳实践：ESG指标对标分析服务', content: `深⼊研究同⾏业的ESG指标体系，帮助企业制定符合中国市场和资本市场需求的ESG策略，提升⾏业竞争⼒。`, src: image1 },
+  { id: '2', title: 'ESG披露与报告', content: `提供全⾯的ESG报告服务，满⾜合规需求并回应各利益相关⽅的关切，展⽰企业在可持续发展⽅⾯的绩效。`, src: image2 },
+  { id: '3', title: 'ESG内部管理体系', content: `建⽴符合中国特⾊的ESG管理矩阵，分配ESG议题与监测指标，提升企业在可持续发展⽅⾯的表现和市场竞争⼒。`, src: image3 },
+  { id: '4', title: 'ESG投资⼈沟通与互动', content: `根据不同投资⼈的ESG倾向，定制沟通策略，包括ESG路演和股东⼤会议案投票，确保有效传达企业的ESG信息。`, src: image4 },
+  { id: '5', title: 'ESG专题研究服务', content: `根据企业需求，提供定制化的专题研究服务，如⽓候⻛险评估、绿⾊建筑和治理架构，帮助企业实现可持续发展⽬标。`, src: image5 },
+  { id: '6', title: '能⼒建设与培训', content: `提供ESG基础知识和专题培训，帮助企业员⼯全⾯了解ESG概念和实践，并通过认证课程和⾏业研讨会提升企业整体ESG能⼒。`, src: image6 },
+  { id: '7', title: '数智化产品研发', content: `利⽤数智化⼿段，开发定制化⼯具，帮助企业应对不同利益相关⽅的需求，提⾼管理效率，聚焦⾼附加值⼯作。`, src: image7 },
+  { id: '8', title: 'ESG战略', content: `评估与企业⻓期价值和可持续发展最为重要的ESG议题，制定战略⽬标和可衡量的KPI，推动企业在可持续发展道路上的前进。`, src: image8 },
+  { id: '9', title: '实质性议题影响分析', content: `通过双重重要性原则，识别与企业战略⽬标和利益相关⽅⾼度相关的实质性议题，制定优先应对策略，确保企业有效回应最重要的挑战和机遇。`, src: image9 }
 ])
 </script>
 
@@ -28,7 +28,7 @@ const imageData = ref([
     <section>
       <article>
         <div class="content">
-          <h2>SmartESG提供ESG专业全流程服务，从合规报告、认知提升、⽬标设定，内部管理KPI及外部利益相关⽅沟通策略等⽅⾯，陪伴企业逐步陪伴企业成⻓，迈向可持续领导⼒。</h2>
+          <h2>SmartESG提供全⾯的ESG专业服务，涵盖合规报告、认知提升、⽬标设定、管理KPI及沟通策略，助⼒企业实现可持续发展。</h2>
         </div>
         <div class="media">
           <div class="grid-wrapper">
@@ -38,14 +38,12 @@ const imageData = ref([
                   <div class="card-media" :style="{ backgroundImage: 'url(' + item.src + ')' }" />
                 </div>
                 <div class="text-section">
-                  <h3 class="ellipses-overflow">
+                  <h6>
                     {{ item.content }}
-                  </h3> 
-                  <a class="cta-text"
-                    href="#"
-                    target="_blank">
+                  </h6>
+                  <!-- <a class="cta-text" href="#" target="_blank">
                     阅读 更多
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>

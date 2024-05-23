@@ -2,7 +2,6 @@
   * {
     box-sizing: border-box;
   }
-
   @media (hover: hover) and (pointer: fine) {
     .flex-card.hover {
       transition: all 250ms ease-in-out;
@@ -58,7 +57,6 @@
           .flex-card {
             border-radius: 8px 8px 8px 0;
             padding: 2rem;
-            padding-bottom: 6rem;
             display: inline-block;
             height: 100%;
             width: 100%;
@@ -90,17 +88,18 @@
   .flex-card .card-content .card-media-wrapper[data-category]:not([data-video-url])::before {
     content: attr(data-category);
     position: absolute;
-    bottom: 0;
+    bottom: -2rem;
     left: 1rem;
-    width: calc(100% - 2rem);
+    width: 100%;
     text-align: right;
     transform: rotate(-90deg);
     transform-origin: bottom left;
     line-height: 1;
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.08em;
+    white-space: nowrap;
   }
 
   .flex-card .card-content .card-media-wrapper .card-media {

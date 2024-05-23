@@ -4,7 +4,7 @@
       <article class="container">
         <div class="content">
           <div class="section-body">
-            <h2>汇聚了中国、硅⾕及华尔街的优秀⼈才，团队成员分布在北京、硅⾕两地。 曾⼯作多年于MSCI、标普、CDP、世界资源研究所，脸书，美国环保局，国家电⽹等中国⼤中型企业和机构，具有全球领先ESG战略咨询服务经验。</h2>
+            <h6>汇聚中国、硅⾕及华尔街的优秀⼈才，团队分布在北京、硅⾕两地。成员曾就职于MSCI、标普、CDP、世界资源研究所、脸书、美国环保局、国家电⽹等知名企业和机构，拥有丰富的ESG战略咨询服务经验。</h6>
           </div>
           <div class="grid-wrapper">
             <div class="card">
