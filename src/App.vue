@@ -1,112 +1,117 @@
-<script setup lang="ts">
-import { ElDropdownMenu, ElDropdown } from 'element-plus';
-import Header from '@/components/header/index.vue'
-
-</script>
-
 <template>
-  <Header />
-  <RouterView />
-  <footer class="footer">
-    <article class="continer">
-      <div class="footer-menu">
-        <nav>
-          <h4>联系方式</h4>
-          <ul class="menu-list">
-            <li>微信公众号：ghostsubmarine</li>
-            <li>业务联系邮箱：842533106@qq.com</li>
-            <li>业务联系电话：011-7224456</li>
-          </ul>
-        </nav>
+  <div class="header">
+    <div class="head">
+      <div class="logo">
+        <a href="/"><img src="@/assets/images/green-removebg-preview.jpg"></a>
       </div>
-    </article>
-  </footer>
+      <div class="nav">
+        <div class="nav-itm">
+          <a href="/">主页</a>
+        </div>
+        <div class="nav-itm">
+          <h2><a href="#">解决方案中心</a></h2>
+          <ul>
+            <li>
+              <a href="/enterpriseEnd">ESG企业端解决⽅案</a>
+            </li>
+            <li>
+              <a href="/investor">ESG投资⼈解决⽅案</a>
+            </li>
+            <li>
+              <a href="/comprehensiveRating">评级综合解决⽅案</a>
+            </li>
+            <li>
+              <a href="/carbonAndClimate">碳与⽓候解决⽅案</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-itm">
+          <h2><a href="/aboutUs">关于我们</a></h2>
+        </div>
+        <div class="nav-itm">
+          <a href="#">用户登录</a>
+        </div>
+      </div>
+    </div>
+    <div class="top-m-menu-btn" id="js_top_m_btn">
+      <em></em>
+    </div>
+  </div>
+  <RouterView />
+  <div class="footer">
+    <div class="container foot">
+      <div class="foot-logo">
+      </div>
+      <div class="foot-nav">
+        <div class="foot-nav-itm">
+          <a href="/aboutUs">关于我们</a>
+        </div>
+        <div class="foot-nav-itm">
+          <a>加入我们</a>
+        </div>
+        <div class="foot-nav-itm">
+          <a>ghostsubmarine.com</a>
+        </div>
+      </div>
+      <div class="foot-copy">© Copyright 2024</div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.footer {
-	// padding-top: 4rem;
-  max-width: calc(1380px - 10.5rem);
-  margin: 0 auto;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
   width: 100%;
-  background-color: #496D70;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  .continer {
-    max-width: calc(1280px - 12rem);
-    width: calc(100% - 3rem);
-    margin-left: auto;
-    margin-right: auto;
-    .footer-menu {
+  height: 10rem;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 .2rem .5rem rgb(0 0 0 / 15%);
+
+  .head {
+    position: relative;
+    padding-left: 45rem;
+    height: 10rem;
+
+    .logo {
+      left: 5rem;
+
+      img {
+        left: 0;
+        margin-top: -8rem;
+        height: 16rem;
+      }
+    }
+
+    .logo,
+    .top-search {
+      position: absolute;
+      top: 0;
+      height: 100%;
+
+      img {
+        position: absolute;
+        top: 50%;
+      }
+    }
+
+    .nav {
       display: flex;
-      justify-content: space-between;
-      // padding: 3rem 0 0;
+      height: 100%;
+    }
+
+    .nav-itm {
       position: relative;
-      @media screen and (min-width: 640px) {
-        &::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 8rem;
-          background: linear-gradient(90deg, rgba(99, 71, 255, 0) 0%, #6347ff 52.99%, rgba(99, 71, 255, 0) 100%);
-          height: 1px;
-        }
-      }
-      nav {
-        // padding-bottom: calc(1rem + 1px);
-        margin: 1rem 0;
-        position: relative;
-        h4 {
-          padding-bottom: 0.5rem;
-		      font-size: 1.25rem;
-          &::after {
-            content: unset;
-          }
-        }
-        .menu-list {
-          list-style: none;
-          margin: 0;
-          padding-left: 0;
-          opacity: 1;
-          max-height: unset;
-          overflow: unset;
-          transition: all 250ms;
-          display: flex;
-          @media screen and (min-width: 768px) {
-            li {
-              &:not(:last-child) {
-                padding-right: 2.25rem;
-              }
-            }
-          }
-        }
-      }
+      display: inline-block;
+      padding: 0 7rem;
+      // flex: 1;
     }
   }
 }
 
-@media screen and (min-width: 640px) {
-
-	.footer {
-		// padding-top: 2rem;
-		// padding-bottom: 2rem;
-	}
-}
-
-@media screen and (min-width: 960px) {
-
-	.footer {
-		// padding-top: 3rem;
-		// padding-bottom: 3rem;
-	}
-}
-
-@media screen and (min-width: 1280px) {
-
-	.footer {
-		// padding-top: 4rem;
-		// padding-bottom: 4rem;
-	}
+.footer {
+  background-image: url(./assets/images/20240411141725.jpg);
 }
 </style>

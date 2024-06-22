@@ -40,11 +40,11 @@ const router = createRouter({
         title: '碳与⽓候解决⽅案'
       }
     },
-    {
-      path: '/stage',
-      name: 'stage',
-      component: () => import('@/pages/stage/index.vue')
-    },
+    // {
+    //   path: '/stage',
+    //   name: 'stage',
+    //   component: () => import('@/pages/stage/index.vue')
+    // },
     {
       path: '/aboutUs',
       name: 'aboutUs',

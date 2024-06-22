@@ -1,14 +1,14 @@
 <script setup>
 import { ref } from 'vue'
-import image1 from '../../../assets/images/enterpriseEnd/微信图片_20240414132032.jpg'
-import image2 from '../../../assets/images/enterpriseEnd/微信图片_20240414132103.png'
-import image3 from '../../../assets/images/enterpriseEnd/微信图片_20240414132110.png'
-import image4 from '../../../assets/images/enterpriseEnd/微信图片_20240414132113.png'
-import image5 from '../../../assets/images/enterpriseEnd/微信图片_20240414132115.png'
-import image6 from '../../../assets/images/enterpriseEnd/微信图片_20240414132126.png'
-import image7 from '../../../assets/images/enterpriseEnd/微信图片_20240414132128.png'
-import image8 from '../../../assets/images/enterpriseEnd/微信图片_20240414132135.png'
-import image9 from '../../../assets/images/enterpriseEnd/微信图片_20240414132138.png'
+import image1 from '../../../assets/images/enterpriseEnd/20240414132032.jpg'
+import image2 from '../../../assets/images/enterpriseEnd/20240414132103.png'
+import image3 from '../../../assets/images/enterpriseEnd/20240414132110.png'
+import image4 from '../../../assets/images/enterpriseEnd/20240414132113.png'
+import image5 from '../../../assets/images/enterpriseEnd/20240414132115.png'
+import image6 from '../../../assets/images/enterpriseEnd/20240414132126.png'
+import image7 from '../../../assets/images/enterpriseEnd/20240414132128.png'
+import image8 from '../../../assets/images/enterpriseEnd/20240414132135.png'
+import image9 from '../../../assets/images/enterpriseEnd/20240414132138.png'
 const imageData = ref([
   { id: '1', title: '同⾏最佳实践：ESG指标对标分析服务', content: `深⼊研究同⾏业的ESG指标体系，帮助企业制定符合中国市场和资本市场需求的ESG策略，提升⾏业竞争⼒。`, src: image1 },
   { id: '2', title: 'ESG披露与报告', content: `提供全⾯的ESG报告服务，满⾜合规需求并回应各利益相关⽅的关切，展⽰企业在可持续发展⽅⾯的绩效。`, src: image2 },
@@ -24,36 +24,30 @@ const imageData = ref([
 
 
 <template>
-  <main class="main">
-    <section>
-      <article>
-        <div class="content">
-          <h2>SmartESG提供全⾯的ESG专业服务，涵盖合规报告、认知提升、⽬标设定、管理KPI及沟通策略，助⼒企业实现可持续发展。</h2>
-        </div>
-        <div class="media">
-          <div class="grid-wrapper">
-            <div class="flex-card  hover has-cta" v-for="item in imageData" :key="item.id + ''">
-              <div class="card-content">
-                <div class="card-media-wrapper" :data-category="item.title">
-                  <div class="card-media" :style="{ backgroundImage: 'url(' + item.src + ')' }" />
-                </div>
-                <div class="text-section">
-                  <h6>
-                    {{ item.content }}
-                  </h6>
-                  <!-- <a class="cta-text" href="#" target="_blank">
-                    阅读 更多
-                  </a> -->
-                </div>
-              </div>
+  <div class="idx-sct3" style="padding-top: 17rem;;">
+    <div class="idx-sct-title">ESG企业端解决⽅案</div>
+    <div class="idx-sct-areas-list">
+      <div class="idx-sct-areas-row">
+        <div class="idx-sct-area-itm" v-for="(item, index) in imageData" :key="item.id">
+          <div class="idx-sct-area-itm-top">
+            <div class="idx-sct-area-itm-img" :style="`background-image: url(${item.src})`"></div>
+            <div class="idx-sct-area-itm-shadow"></div>
+            <div class="idx-sct-area-itm-txt">
+              <ul>
+                <li>{{item.content}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="idx-sct-area-itm-inf">
+            <div class="idx-sct-area-itm-no">
+              {{index + 1}}
+            </div>
+            <div class="idx-sct-area-itm-title">
+              {{item.title}}
             </div>
           </div>
         </div>
-      </article>
-    </section>
-  </main>
+      </div>
+    </div>
+  </div>
 </template>
-
-<style lang="scss" scoped>
-@import url(../../../assets/grid.scss);
-</style>

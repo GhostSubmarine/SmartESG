@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
-import image1 from '../../assets/images/stage/微信图片_20240414141203.png'
-import image2 from '../../assets/images/stage/微信图片_20240414141212.png'
-import image3 from '../../assets/images/stage/微信图片_20240414141216.png'
+import image1 from '../../assets/images/stage/20240414141203.png'
+import image2 from '../../assets/images/stage/20240414141212.png'
+import image3 from '../../assets/images/stage/20240414141216.png'
 const imageData = ref([
   { 
     id: '1', 

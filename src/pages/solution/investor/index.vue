@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import image1 from '../../../assets/images/investor/微信图片_20240414134148.png'
-import image2 from '../../../assets/images/investor/微信图片_20240414134219.png'
-import image3 from '../../../assets/images/investor/微信图片_20240414134227.png'
-import image4 from '../../../assets/images/investor/微信图片_20240414134230.png'
-import image5 from '../../../assets/images/investor/微信图片_20240414135109.png'
+import image1 from '../../../assets/images/investor/20240414134148.png'
+import image2 from '../../../assets/images/investor/20240414134219.png'
+import image3 from '../../../assets/images/investor/20240414134227.png'
+import image4 from '../../../assets/images/investor/20240414134230.png'
+import image5 from '../../../assets/images/investor/20240414135109.png'
 const imageData = ref([
   {id: '1', title: 'ESG尽调与市场分析', content: `基于IFC标准，定制ESG尽调⽅案，全⾯扫描⻛险并提供决策⽀持。`, src: image1},
   {id: '2', title: 'ESG投资策略整合', content: `根据需求和偏好，提供ESG投资策略选择、产品搭建和技术研究服务。`, src: image2},
@@ -16,38 +16,30 @@ const imageData = ref([
 
 
 <template>
-  <main class="main">
-    <section>
-      <article>
-        <div class="content">
-          <h2>SmartESG提供ESG投资⼈解决⽅案，助⼒低碳转型。</h2>
-        </div>
-        <div class="media">
-          <div class="grid-wrapper">
-            <div class="flex-card  hover has-cta" v-for="item in imageData" :key="item.id + ''">
-              <div class="card-content">
-                <div class="card-media-wrapper" :data-category="item.title">
-                  <div class="card-media" :style="{ backgroundImage: 'url(' + item.src + ')' }" />
-                </div>
-                <div class="text-section">
-                  <h6 class="ellipses-overflow">
-                    {{ item.content }}
-                  </h6> 
-                  <!-- <a class="cta-text"
-                    href="#"
-                    target="_blank">
-                    阅读 更多
-                  </a> -->
-                </div>
-              </div>
+  <div class="idx-sct3" style="padding-top: 17rem;;">
+    <div class="idx-sct-title">ESG投资⼈解决⽅案</div>
+    <div class="idx-sct-areas-list">
+      <div class="idx-sct-areas-row">
+        <div class="idx-sct-area-itm" v-for="(item, index) in imageData" :key="item.id">
+          <div class="idx-sct-area-itm-top">
+            <div class="idx-sct-area-itm-img" :style="`background-image: url(${item.src})`"></div>
+            <div class="idx-sct-area-itm-shadow"></div>
+            <div class="idx-sct-area-itm-txt">
+              <ul>
+                <li>{{item.content}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="idx-sct-area-itm-inf">
+            <div class="idx-sct-area-itm-no">
+              {{index + 1}}
+            </div>
+            <div class="idx-sct-area-itm-title">
+              {{item.title}}
             </div>
           </div>
         </div>
-      </article>
-    </section>
-  </main>
+      </div>
+    </div>
+  </div>
 </template>
-
-<style lang="scss" scoped>
-@import url(../../../assets/grid.scss);
-</style>
